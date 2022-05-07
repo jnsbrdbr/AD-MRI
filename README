@@ -1,0 +1,63 @@
+
+***************************************************************************************************************************
+If you use this work for your research, please cite the following work:
+
+M. Hon, N.M. Khan. Towards Alzheimer's Disease Classification through Transfer Learning. IEEE International Conference on Bioinformatics and Biomedicine (BIBM), 2017. 
+
+Thank you!
+***************************************************************************************************************************
+
+
+The final results of this experiment are in the folders:
+
+1. InceptionV4_FineTunnign_ALL - finetuning with InceptionV4
+2. VGG16_Experiment - finetuning with VGG16 (weights)
+3. VGG16_Experiment_Models - finetuning with VGG16 (models)
+4. VGG16_None_Experiments - no finetuning, training VGG16 from scratch
+5. MRI_32_Images - all images and folders of datasets
+
+
+
+
+----
+
+This folder (in data.zip) contains a structure of "train" and "validation". Each with "alzheimers" and "nonalzheimers" MRI images. 
+There are a total of 210 for each of training and a total of 90 for each of validation.
+
+These images were obtained from http://www.oasis-brains.org/ .
+
+These images were converted GIF to JPG.
+
+Additionally, there is a script called "ChangeNamesOfFiles.bat".
+This file was used to change the original names to YAL###.jpg and NAL###.jpg .
+YAL stands for "Yes Alzheimers" and NAL stands for "No Alzheimers".
+
+
+The following is the step by step instructions to get Keras working.
+
+The operating system is Ubuntu.
+
+The steps are:
+
+1. python -V (makesure it is 2.7)
+2. sudo apt install python-pip
+3. pip install numpy
+4. pip install pillow
+5. pip install scipy
+6. pip install keras
+7. pip instal h5py
+8. sudo apt-get install python-pip python-dev
+9. pip install tensorflow
+
+openCV --> sudo apt-get install python-opencv
+
+
+qsub -l gpu
+module purge
+module load CUDA/8.0
+module load PYTHON/2.7.13
+pip install --user <program>
+
+
+chmod a+x <file>
+qsub -q gpu submit.pbs
